@@ -1,0 +1,360 @@
+1.Anagram of each other for given String 
+
+
+import java.util.Arrays;
+
+public class AnagramOfTwoStrings {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String s1 ="LISTEN";
+		
+		String s2 ="SILENT";
+		
+		char[] c1 =s1.toCharArray();
+		
+		char[] c2 =s2.toCharArray();
+		
+		if(c1.length !=c2.length)
+		{
+			System.out.println("It is not a Anagram");
+			
+		}
+		
+		Arrays.sort(c1);
+		Arrays.sort(c2);
+		
+		for(int i=0;i<c1.length;i++)
+		{
+			if(c1[i]!=c2[i])
+			{
+				System.out.println("It is not a Anagram");
+			}
+		}
+		
+		System.out.println("It is a Anagram");
+		
+	}		
+
+	}
+
+====================================================================================================================
+
+2.Assending order of an array in java
+
+
+public class AssendingOrder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] arr = {5,3,7,9,6};
+		int temp=0;
+		
+		
+		for(int i =0;i<arr.length;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[j]<arr[i])
+				{
+				 temp=arr[i];
+				 arr[i]=arr[j];
+				 arr[j]=temp;
+				 
+					
+				}
+			}
+			System.out.println("sorted elements :"+ arr[i]);
+		}
+		
+	}
+
+}
+ =======================================================================================================================
+ 
+ 3.Count Of Occurance in a given string in java
+ 
+ 
+public class CountOfOccurance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str = "babajava";
+		
+		char[] ch = str.toCharArray();
+		
+		for ( int i = 0; i <ch.length; i++) {
+		int count = 0;
+		char c=str.charAt(i);
+		for (int j = 0; j <ch.length; j++) {
+		if (c==ch[j]){
+		count++;
+		ch[j]='\u0000';
+		}
+		}
+		if(count>0)System.out.println(c+"="+count);
+
+		}
+
+	}
+
+}
+ ==========================================================================================================
+ 
+ 4. Find duplicate characaters in a given string 
+ 
+ 
+ 
+public class DuplicateChar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = "Maximum and Minimum";
+		int count;
+		
+		// Converts given string into character array
+		char ch[] = str.toCharArray();
+
+		// Count the frequency of each character present in the string
+		for (int i = 0; i < ch.length; i++) {
+			count = 1;
+			for (int j = i + 1; j < ch.length; j++) {
+				if (ch[i] == ch[j] && ch[i] != ' ') {
+					count++;
+					// Set string[j] to 0 to avoid printing visited character
+					ch[j] = '0';
+				}
+			}
+			// A character is considered as duplicate if count is greater than 1
+			if (count > 1 && ch[i] != '0')
+				System.out.println(ch[i]);
+		}
+	}
+
+}
+ =============================================================================================================================
+ 
+ 5. find duplicate in an array in java 
+ 
+ 
+public class FindDuplicateElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		int[] arr = {1,2,3,4,5,2,1};
+		
+		for(int i=0;i<arr.length-1;i++)
+		{
+			for(int j=i+1;j<arr.length;j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					System.out.println("duplicate Element: "+arr[j]);
+				}
+			}
+		}
+	}
+
+}
+
+==================================================================================================================
+6.palindrome ina given number /String in java 
+
+
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// For string
+
+		/*
+		 * String str = "Automation";
+		 * 
+		 * String reverse = " ";
+		 * 
+		 * for (int i = 0; i < str.length(); i++)
+		 * 
+		 * reverse = reverse + str.charAt(i);
+		 * 
+		 * if (str.equals(reverse))
+		 * 
+		 * System.out.println("The given string is palindrome"); else
+		 * 
+		 * System.out.println("The given string is not palindrome");
+		 * 
+		 */
+
+		// For number
+
+		int num = 12021, reverse = 0, temp, reminder;
+
+		temp = num;
+
+		if (temp != 0) {
+			reminder = temp % 10;
+
+			reverse = reverse * 10 + reminder;
+
+			temp = temp / 10;
+		};
+
+		if (num == reverse) {
+			System.out.println("The given number is plaindrome");
+		} else {
+			System.out.println("The given number is not  plaindrome");
+		}
+
+	}
+
+}
+
+===============================================================================================================================
+
+7. Reverse of each indivudual of string in java
+
+
+public class ReverseOfIndividualWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str ="Java Programming";
+		
+		//[Java , Programming]
+		String[] words=str.split(" ");
+		
+		String revString =" ";
+		
+		for(int i =0;i<words.length;i++)
+		{
+			String word =words[i];
+			
+			String revWord =" ";
+			
+			for(int j=0;j<word.length();j++)
+			{
+				revWord =  word.charAt(j)+revWord;
+			}
+			
+			revString = revString+revWord +" ";
+			
+		}
+		
+		System.out.println(revString);
+
+	}
+
+}
+ ============================================================================================================================
+ 
+8. Reverse of given string in java
+ 
+ 
+public class ReverseString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str = "Automation";
+		
+		String rstr = " ";
+		
+		for(int i=0;i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			
+			rstr=ch+ rstr;
+		}
+		
+		System.out.println("Reverse of string " +rstr);
+
+	}
+
+}
+
+=========================================================================================================================
+
+9. Second Largest Number in ar array in java 
+
+
+
+public class SecondLargestNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int[] arr = {5,6,22,68,33,95};
+		
+		int first = arr[0] ,second = arr[0];
+		
+		for(int i=1;i<arr.length;i++)
+		{
+			if(arr[i]> first)
+			{
+				second =first;				
+				first = arr[i];
+			}
+			else if(arr[i] >second)
+			{
+				second = arr[i];
+				
+			}	
+			
+		}
+		
+		System.out.println("Second Largest number :" + second);
+	}
+
+}
+
+==========================================================================================================
+
+11.Remove duplicate elements in array in java 
+
+import java.util.Arrays;
+
+public class RevmoveDuplicates {
+
+	
+		   public static int[] removeDuplicateElements(int arr[]){
+		      int n = arr.length;
+		      int[] temp = new int[n];
+		      int j = 0;
+		      for (int i=0; i<n-1; i++){
+		         if (arr[i] != arr[i+1]){
+		            temp[j++] = arr[i];
+		         }
+		      }
+		      temp[j++] = arr[n-1];    
+		     
+		      return temp;
+		       
+		    }
+		     
+		    public static void main (String[] args) {
+		       int arr[] = {10,70,30,90,20,20,30,40,70,50};
+		       //sort the array
+		       Arrays.sort(arr);
+		       int[] result = removeDuplicateElements(arr);
+		       //printing array elements
+		       for (int i=0; i<result.length; i++)  {
+		          if(result[i] != 0){
+		             System.out.print(result[i]+" ");
+		          }        
+		       }
+		   }
+		}z
+
+
+
+
+
